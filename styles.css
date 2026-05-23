@@ -181,12 +181,16 @@ p  { margin: 0; }
 /* ===== Hero grid (text + painting) ===== */
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 52px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 50px;
   align-items: center;
-  margin-bottom: 44px;
+  margin: 28px 0 44px;
 }
-.hero-text { display: flex; flex-direction: column; }
+.hero-text-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
 
 .hero-figure {
   margin: 0;
@@ -275,9 +279,9 @@ p  { margin: 0; }
 .hero-title {
   font-family: 'Bebas Neue', 'Inter', sans-serif;
   font-weight: 400;
-  font-size: clamp(4.5rem, 14vw, 12rem);
+  font-size: clamp(3.8rem, 11vw, 9rem);
   line-height: 0.85;
-  margin: 28px 0 18px;
+  margin: 22px 0 18px;
   letter-spacing: -0.01em;
 }
 .hero-title .line { display: block; }
@@ -293,7 +297,7 @@ p  { margin: 0; }
   font-family: 'Playfair Display', 'Bebas Neue', serif;
   font-weight: 700;
   letter-spacing: -0.03em;
-  font-size: clamp(3.5rem, 11vw, 9rem);
+  font-size: clamp(2.8rem, 8.5vw, 7rem);
   margin-top: -0.05em;
 }
 
@@ -301,7 +305,7 @@ p  { margin: 0; }
   max-width: 720px;
   font-size: clamp(1.05rem, 1.6vw, 1.3rem);
   color: var(--ink-soft);
-  margin-bottom: 38px;
+  margin-bottom: 0;
 }
 
 .hero-meta {
@@ -335,7 +339,7 @@ p  { margin: 0; }
 }
 .meta-highlight .meta-value { color: var(--br-yellow); }
 
-.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 60px; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 
 .btn {
   display: inline-flex; align-items: center;
@@ -1029,8 +1033,9 @@ p  { margin: 0; }
   .tier-master { transform: none; }
   .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .hero-meta { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero-figure-frame { max-width: 480px; margin: 0 auto; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-figure-frame { max-width: 420px; margin: 0 auto; }
+  .hero-figure figcaption { text-align: center; }
 }
 
 @media (max-width: 760px) {
@@ -1062,7 +1067,6 @@ p  { margin: 0; }
   .footer-cols { grid-template-columns: repeat(2, 1fr); }
 
   .hero { padding: 120px 0 60px; min-height: auto; }
-  .hero-title .line.two { font-size: clamp(2.8rem, 13vw, 6rem); }
 
   .timeline-item { grid-template-columns: 46px 1fr; gap: 16px; }
   .timeline::before { left: 22px; }
